@@ -80,6 +80,7 @@ const memeBottomText = document.getElementById('bottom-text');
 const eraseButton = document.getElementById('erase');
 const imgWrapper = document.getElementById('img-wrapper');
 const resetButton = document.getElementById('reset-btn');
+const download = document.getElementById('download-btn');
 
 myInput.addEventListener('keydown', (e) => {
     translateQuery = e.target.value;
@@ -129,3 +130,22 @@ resetButton.addEventListener('click', () => {
     topText.focus();
 })
 
+download.addEventListener('click', () => {
+    // back up image download
+        const img = document.querySelector('img')
+        const url = img.src;
+        fetch(url)
+            .then(resp => resp.blob())
+            .then(blob => {
+                const url = window.URL.createObjectURL(blob);
+                const a = document.createElement('a');
+                a.style.display = 'none';
+                a.href = url;
+                a.download = 'meme.gif';
+                document.body.appendChild(a);
+                a.click();
+                window.URL.revokeObjectURL(url);
+            })
+            .catch(() => alert('An error sorry'));
+    })
+    
