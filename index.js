@@ -1,5 +1,3 @@
-console.log(key);
-
 const translateEndPoint = 'api.giphy.com/v1/gifs/translate';
 const randomEndPoint = 'api.giphy.com/v1/gifs/random';
 let translateQuery;
@@ -80,7 +78,8 @@ const memeBottomText = document.getElementById('bottom-text');
 const eraseButton = document.getElementById('erase');
 const imgWrapper = document.getElementById('img-wrapper');
 const resetButton = document.getElementById('reset-btn');
-const download = document.getElementById('download-btn');
+const downloadGif = document.getElementById('download-gif');
+const downloadSS = document.getElementById('download-ss');
 
 myInput.addEventListener('keydown', (e) => {
     translateQuery = e.target.value;
@@ -130,22 +129,36 @@ resetButton.addEventListener('click', () => {
     topText.focus();
 })
 
-download.addEventListener('click', () => {
-    // back up image download
-        const img = document.querySelector('#img')
-        const url = img.src;
-        fetch(url)
-            .then(resp => resp.blob())
-            .then(blob => {
-                const url = window.URL.createObjectURL(blob);
-                const a = document.createElement('a');
-                a.style.display = 'none';
-                a.href = url;
-                a.download = 'meme.gif';
-                document.body.appendChild(a);
-                a.click();
-                window.URL.revokeObjectURL(url);
-            })
-            .catch(() => alert('An error sorry'));
+downloadGif.addEventListener('click', () => {
+    const img = document.querySelector('#img')
+    const url = img.src;
+    fetch(url)
+    .then(resp => resp.blob())
+    .then(blob => {
+        const url = window.URL.createObjectURL(blob);
+        const a = document.createElement('a');
+        a.style.display = 'none';
+        a.href = url;
+        a.download = 'meme.gif';
+        document.body.appendChild(a);
+        a.click();
+        window.URL.revokeObjectURL(url);
+    }).catch(() => alert('An error sorry'));
+});
+    
+downloadSS.addEventListener('click', () => {
+    const imgWrapper = document.getElementById('img-wrapper');
+    html2canvas(imgWrapper, {useCORS: true, allowTaint: true}).then(function(canvas){
+        let results = document.querySelector('.results');
+        results.style.display = 'none';
+        results.append(canvas);
+        let cvs = document.querySelector("canvas");
+        const a = document.createElement('a');
+        a.style.display = 'none';
+        a.href = cvs.toDataURL();
+        a.download = 'meme.jpeg';
+        document.body.appendChild(a);
+        a.click();
     })
+});
     
