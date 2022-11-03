@@ -61,12 +61,16 @@ function getRandomImage() {
     })
 }
 
-const myInput = document.getElementById('myInput');
+const myInput = document.getElementById('my-input');
 const translateButton = document.getElementById('translate-btn');
 const randomButton = document.getElementById('random-btn');
 const topText = document.getElementById('top-text');
 const bottomText = document.getElementById('bottom-text');
-
+const memeTopText = document.getElementById('top-text');
+const memeBottomText = document.getElementById('bottom-text');
+const eraseButton = document.getElementById('erase');
+const imgWrapper = document.getElementById('img-wrapper');
+const resetButton = document.getElementById('reset-btn');
 
 myInput.addEventListener('keydown', (e) => {
     translateQuery = e.target.value;
@@ -78,10 +82,38 @@ translateButton.addEventListener('click', () => {
 
 randomButton.addEventListener('click', getRandomImage);
 
-topText.addEventListener('keydown', () => {
-
+topText.addEventListener('keyup', (e) => {
+    if (document.getElementById('top-t')) {
+        imgWrapper.removeChild(document.getElementById('top-t'));
+    }
+    const topT = document.createElement('p');
+    topT.setAttribute('id', 'top-t');
+    topT.innerText = e.target.value;
+    imgWrapper.append(topT);
 });
 
-bottomText.addEventListener('keydown', () => {
-
+bottomText.addEventListener('keyup', (e) => {
+    if (document.getElementById('bottom-t')) {
+        imgWrapper.removeChild(document.getElementById('bottom-t'));
+    }
+    const bottomT = document.createElement('p');
+    bottomT.setAttribute('id', 'bottom-t');
+    bottomT.innerText = e.target.value;
+    imgWrapper.append(bottomT);
 })
+
+eraseButton.addEventListener('click', () => {
+    myInput.value = '';
+    myInput.focus();
+})
+
+resetButton.addEventListener('click', () => {
+    console.log('hi');
+    document.getElementById('top-t').innerText = '';
+    document.getElementById('bottom-t').innerText = '';
+    topText.value = '';
+    bottomText.value = '';
+    topText.focus();
+    
+})
+

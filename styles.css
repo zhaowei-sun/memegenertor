@@ -1,8 +1,72 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300;400&display=swap');
+
 body {
     margin: 0;
     background-color: antiquewhite;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: 'Roboto Mono', monospace;
 }
 
 img {
-    width: 500px;
+    width: 400px;
+}
+
+.my-input-wrapper {
+    width: 350px;
+}
+
+.my-input-wrapper i {
+    font-size: 20px;
+}
+
+
+.upper-inputs {
+    display: flex;
+    flex-direction: column;
+}
+
+.upper-inputs #my-input {
+    width: 310px;
+    height: 35px;
+    text-align: center;
+    border-radius: 10px;
+    border: none;
+    font-family: 'Rubik', sans-serif;
+}
+
+.upper-inputs #translate-btn,
+.upper-inputs #random-btn {
+    width: 350px;
+    height: 25px;
+    margin-top: 5px;
+    cursor: pointer;
+    border-radius: 10px;
+    border: none;
+    font-family: 'Rubik', sans-serif;
+}
+
+.lower-inputs {
+    display: flex;
+    flex-direction: column;
+}
+
+.lower-inputs #top-text,
+.lower-inputs #bottom-text {
+    width: 350px;
+    height: 30px;
+    text-align: center;
+    border-radius: 10px;
+    border: none;
+    font-family: 'Rubik', sans-serif;
+}
+
+.lower-inputs #bottom-text {
+    margin-top: 5px;
+}
+
+.gif-img {
+    width: 400px;
+    border: solid 5px black;
 }

@@ -4,21 +4,33 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/c37f6a772a.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="./styles.css"> 
     <title>Meme Generator</title>
 </head>
 <body>
     <h1>Meme Generator</h1>
-    <input id="myInput" type="text" placeholder="What's on your mind?">
-    <button id="translate-btn">Generate Your Meme</button>
-    <button id="random-btn">Generate Random Meme</button>
-    <div class="gif-img">
-        <p id="meme-top-text"></p>
-        <img id="img" />
-        <p id="meme-bottom-text"></p>
+    <div class="upper-inputs">
+        <div class="my-input-wrapper">
+            <input id="my-input" type="text" placeholder="What's on your mind?">
+            <i id="erase" class="fa-solid fa-eraser"></i>
+        </div>
+        <button id="translate-btn">Generate Your Meme</button>
+        <button id="random-btn">Generate Random Meme</button>
     </div>
-    <input id="top-text" type="text" placeholder="Top Text">
-    <input id="bottom-text" type="text" placeholder="Bottom Text"> 
+    
+    <p id="meme-top-text"></p>
+    <div id="img-wrapper" class="gif-img">
+        
+        <img id="img" />
+        
+    </div>
+    <div class="lower-inputs">
+        <input id="top-text" type="text" placeholder="Top Text">
+        <input id="bottom-text" type="text" placeholder="Bottom Text"> 
+        <button id="reset-btn">Reset</button>
+    </div>
+
     <button>Download</button>
     <script src="./key.js" text="type/javascript"></script>
     <script src="./index.js" text="type/javascript"></script>
