@@ -9,7 +9,7 @@ function getInitialImage() {
     fetch(`https://${randomEndPoint}?api_key=${key}&tag=meme`)
         .then(res => res.json())
         .then(data => {
-            document.querySelector('img').src = data.data.images.downsized.url;
+            document.querySelector('#img').src = data.data.images.downsized.url;
         })
 }
 
@@ -25,7 +25,7 @@ function getTranslateImage(string) {
     .then(data => {
         console.log(data);
         console.log(data.data.images.downsized.url);
-        const img = document.querySelector('img')
+        const img = document.querySelector('#img')
         img.setAttribute('crossorigin', 'anonymous');
         img.src = document.getElementById("img").src;
         img.src = data.data.images.downsized.url;
@@ -63,7 +63,7 @@ function getRandomImage() {
     .then(data => {
         console.log(data);
         console.log(data.data.images.downsized.url);
-        const img = document.querySelector('img')
+        const img = document.querySelector('#img')
         img.setAttribute('crossorigin', 'anonymous');
         img.src = document.getElementById("img").src;
         img.src = data.data.images.downsized.url;
@@ -132,7 +132,7 @@ resetButton.addEventListener('click', () => {
 
 download.addEventListener('click', () => {
     // back up image download
-        const img = document.querySelector('img')
+        const img = document.querySelector('#img')
         const url = img.src;
         fetch(url)
             .then(resp => resp.blob())
