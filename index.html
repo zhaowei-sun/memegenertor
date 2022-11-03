@@ -9,33 +9,37 @@
     <title>Meme Generator</title>
 </head>
 <body>
-    <h1 class="title">Meme Generator</h1>
-    <div class="upper-inputs">
-        <div class="my-input-wrapper">
-            <input id="my-input" type="text" placeholder="What's on your mind?">
-            <img id="erase" src="./eraser.png" >
+    <div class="title-wrapper">
+        <h1 class="title">Meme Generator</h1>
+    </div>
+    <div class="main-wrapper">
+        <div class="upper-inputs">
+            <div class="my-input-wrapper">
+                <input id="my-input" type="text" placeholder="What's on your mind?">
+                <img id="erase" src="./eraser.png" >
+            </div>
+            <button id="translate-btn">Generate Your Meme</button>
+            <button id="random-btn">Generate Random Meme</button>
         </div>
-        <button id="translate-btn">Generate Your Meme</button>
-        <button id="random-btn">Generate Random Meme</button>
-    </div>
-    <div id="img-wrapper" class="gif-img">
-        
-        <img id="img" />
-        
-    </div>
-    <div class="lower-inputs">
-        <input id="top-text" type="text" placeholder="Top Text">
-        <input id="bottom-text" type="text" placeholder="Bottom Text"> 
-        <button id="reset-btn">Reset</button>
-    </div>
-
-    <button id="download-gif">Download Meme Gif</button>
-    <button id="download-ss">Download Meme Screenshot</button>
-
-    <div class="results"></div>
+        <div id="img-wrapper" class="gif-img">
+            
+            <img id="img" />
+            
+        </div>
+        <div class="lower-inputs">
+            <input id="top-text" type="text" placeholder="Top Text">
+            <input id="bottom-text" type="text" placeholder="Bottom Text"> 
+            <button id="reset-btn">Reset</button>
+        </div>
     
-    <script src="./html2canvas.js"></script>
-    <script src="./key.js" text="type/javascript"></script>
-    <script src="./index.js" text="type/javascript"></script>
+        <button id="download-gif">Download Meme Gif</button>
+        <button id="download-ss">Download Meme Screenshot</button>
+    
+        <div class="results"></div>
+        
+        <script src="./html2canvas.js"></script>
+        <script src="./key.js" text="type/javascript"></script>
+        <script src="./index.js" text="type/javascript"></script>
+    </div>
 </body>
 </html>
