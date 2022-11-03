@@ -128,7 +128,8 @@ body {
 }
 
 #reset-btn,
-#download-btn {
+#download-gif,
+#download-ss {
     width: 350px;
     height: 30px;
     margin-top: 10px;
