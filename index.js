@@ -3,6 +3,15 @@ console.log(key);
 const translateEndPoint = 'api.giphy.com/v1/gifs/translate';
 const randomEndPoint = 'api.giphy.com/v1/gifs/random';
 let translateQuery;
+getInitialImage();
+
+function getInitialImage() {
+    fetch(`https://${randomEndPoint}?api_key=${key}&tag=meme`)
+        .then(res => res.json())
+        .then(data => {
+            document.querySelector('img').src = data.data.images.downsized.url;
+        })
+}
 
 function getTranslateImage(string) {
     fetch(`https://${translateEndPoint}?api_key=${key}&s=${string}`, {
@@ -88,7 +97,10 @@ topText.addEventListener('keyup', (e) => {
     }
     const topT = document.createElement('p');
     topT.setAttribute('id', 'top-t');
-    topT.innerText = e.target.value;
+    topT.innerText = e.target.value.toUpperCase();
+    // topT.style.fontFamily = "'Bebas Neue', cursive";
+    // topT.style.color = '#FFFFFF';
+    topT.style.cssText = "position: absolute; top: -20px; font-size: 35px; color: white; font-family: 'Bowlby One SC', cursive;-webkit-text-stroke: 2px black;3px black solid";
     imgWrapper.append(topT);
 });
 
@@ -98,7 +110,8 @@ bottomText.addEventListener('keyup', (e) => {
     }
     const bottomT = document.createElement('p');
     bottomT.setAttribute('id', 'bottom-t');
-    bottomT.innerText = e.target.value;
+    bottomT.innerText = e.target.value.toUpperCase();
+    bottomT.style.cssText = "position: absolute; bottom: -25px; font-size: 35px; color: white; font-family: 'Bowlby One SC', cursive;-webkit-text-stroke: 2px black;3px black solid";
     imgWrapper.append(bottomT);
 })
 
@@ -114,6 +127,5 @@ resetButton.addEventListener('click', () => {
     topText.value = '';
     bottomText.value = '';
     topText.focus();
-    
 })
 

@@ -1,8 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300;400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Bowlby+One+SC&family=Bungee+Shade&family=Knewave&family=Luckiest+Guy&family=Rubik+Iso&display=swap');
 
 body {
     margin: 0;
-    background-color: antiquewhite;
+    background-color: #F5E6E8;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -10,7 +11,13 @@ body {
 }
 
 img {
-    width: 400px;
+    width: 360px;
+    object-fit: cover;
+}
+
+.title {
+    font-family: 'Bungee Shade', cursive;
+    color: #192A51;
 }
 
 .my-input-wrapper {
@@ -19,8 +26,8 @@ img {
 
 .my-input-wrapper i {
     font-size: 20px;
+    color: #192A51;
 }
-
 
 .upper-inputs {
     display: flex;
@@ -34,17 +41,40 @@ img {
     border-radius: 10px;
     border: none;
     font-family: 'Rubik', sans-serif;
+    font-size: 15px;
 }
 
 .upper-inputs #translate-btn,
 .upper-inputs #random-btn {
     width: 350px;
-    height: 25px;
-    margin-top: 5px;
+    height: 30px;
+    margin-top: 10px;
     cursor: pointer;
     border-radius: 10px;
     border: none;
     font-family: 'Rubik', sans-serif;
+    font-size: 15px;
+}
+
+.upper-inputs #translate-btn {
+    color: #FFFFFF;
+    background-color: #AAA1C8;
+}
+
+.upper-inputs #translate-btn:hover {
+    background-color: #192A51;
+    box-shadow: 0px 0px 10px #AAA1C8;
+}
+
+.upper-inputs #random-btn {
+    color: #192A51;
+    background-color: #d5C6E0;
+}
+
+.upper-inputs #random-btn:hover {
+    color: #FFFFFF;
+    background-color: #192A51;
+    box-shadow: 0px 0px 10px #AAA1C8;
 }
 
 .lower-inputs {
@@ -60,13 +90,71 @@ img {
     border-radius: 10px;
     border: none;
     font-family: 'Rubik', sans-serif;
+    font-size: 15px;
+}
+
+.lower-inputs #top-text {
+    margin-top: 20px;
 }
 
 .lower-inputs #bottom-text {
-    margin-top: 5px;
+    margin-top: 8px;
 }
 
 .gif-img {
-    width: 400px;
-    border: solid 5px black;
+    width: 380px;
+    background-color: #192A51;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 12.5px 0;
+    border-radius: 15px;
+    margin-top: 20px;
+    border: dotted 5px #D5C6E0;
+    position: relative;
+}
+
+#reset-btn,
+#download-btn {
+    width: 350px;
+    height: 30px;
+    margin-top: 10px;
+    cursor: pointer;
+    border-radius: 10px;
+    border: none;
+    font-family: 'Rubik', sans-serif;
+    font-size: 15px;
+}
+
+#reset-btn {
+    color: #FFFFFF;
+    background-color: #192A51;
+    height: 30px;
+}
+#reset-btn:hover {
+    background-color: #AAA1C8;
+    height: 30px;
+    box-shadow: 0px 0px 10px #AAA1C8;
+}
+
+#download-btn {
+    margin-top: 20px;
+    margin-bottom: 50px;
+    color: #FFFFFF;
+    background-color: #6D6875;
+    height: 30px;
+}
+
+#download-btn:hover {
+    background-color: #4A4E68;
+    box-shadow: 0px 0px 10px #AAA1C8;
+}
+
+#top-T,
+#bottom-T {
+    font-family: 'Bebas Neue', cursive;
+}
+
+#bottom-T {
+
 }
