@@ -1,0 +1,17 @@
+{
+    "name": "Meme Generator",
+    "version": "1.0.1",
+    "description": "Customize, randomize your meme creations",
+    "manifest_version": 3,
+    "author": "Zhaowei Sun & Dison Ruan",
+    "action":{
+        "default_popup": "index.html",
+        "default_title": "Meme Generator"
+    },
+    "icons": {
+        "16": "frog.png",
+        "32": "frog.png",
+        "48": "frog.png",
+        "128": "frog.png"
+    }
+}
